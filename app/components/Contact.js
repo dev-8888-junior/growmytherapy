@@ -51,14 +51,14 @@ export default function Contact() {
                 <div className="mt-7 flex flex-wrap gap-3">
                   <a
                     href="#services"
-                    className="button !border-[var(--surface)] !bg-[var(--surface)] !text-[var(--primary)] hover:!border-[var(--accent-light)] hover:!bg-[var(--accent-light)]"
+                    className="button !border-[var(--surface)] !bg-[var(--surface)] !text-[var(--primary)] hover:!border-[var(--accent-light)] hover:!bg-[var(--accent-light)] active:!scale-[0.98] active:!border-[var(--accent)] active:!bg-[var(--accent)] active:!text-[var(--surface)]"
                   >
                     Explore therapy <ArrowIcon />
                   </a>
 
                   <a
                     href="#faq"
-                    className="inline-flex min-h-[48px] items-center justify-center gap-3 rounded-full border border-white/50 px-5 py-3 text-[10px] font-bold uppercase tracking-[0.08em] text-[var(--surface)] transition-colors hover:bg-white/10 sm:text-[11px]"
+                    className="inline-flex min-h-[48px] items-center justify-center gap-3 rounded-full border border-white/50 px-5 py-3 text-[10px] font-bold uppercase tracking-[0.08em] text-[var(--surface)] transition-[background-color,transform] duration-200 hover:bg-white/10 active:scale-[0.98] active:bg-white/20 sm:text-[11px]"
                   >
                     Read the FAQs <ArrowIcon />
                   </a>
@@ -72,13 +72,16 @@ export default function Contact() {
       <footer className="bg-[#f3eee8]">
         <div className="container grid gap-10 py-12 md:grid-cols-12 md:gap-8 md:py-16">
           <div className="md:col-span-5 lg:col-span-5">
-            <a href="#top" className="inline-flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--accent)] font-serif text-xl text-[var(--primary)]">
+            <a
+              href="#top"
+              className="group inline-flex items-center gap-3 rounded-lg focus-visible:outline-offset-4"
+            >
+              <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--accent)] font-serif text-xl text-[var(--primary)] transition-[transform,background-color,color] duration-300 group-hover:scale-105 group-hover:bg-[var(--accent)] group-hover:text-[var(--surface)] group-active:scale-[0.97] group-active:bg-[var(--accent)] group-active:text-[var(--surface)] motion-reduce:transition-none">
                 M
               </span>
 
               <span>
-                <span className="block font-serif text-xl leading-tight text-[var(--primary)]">
+                <span className="block font-serif text-xl leading-tight text-[var(--primary)] transition-colors group-hover:text-[var(--accent)] group-active:text-[var(--accent)]">
                   Dr. Maya Reynolds
                 </span>
                 <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[0.15em] text-[#354943]">
@@ -102,19 +105,38 @@ export default function Contact() {
               aria-label="Footer navigation"
               className="mt-5 flex flex-col items-start gap-3"
             >
-              <a className="text-sm text-[#354943] underline-offset-4 hover:text-[var(--accent)] hover:underline" href="#about">
+              <a
+                className="text-sm text-[#354943] underline-offset-4 transition-colors hover:text-[var(--accent)] hover:underline active:text-[var(--accent)] active:underline"
+                href="#about"
+              >
                 About Dr. Maya
               </a>
-              <a className="text-sm text-[#354943] underline-offset-4 hover:text-[var(--accent)] hover:underline" href="#services">
+
+              <a
+                className="text-sm text-[#354943] underline-offset-4 transition-colors hover:text-[var(--accent)] hover:underline active:text-[var(--accent)] active:underline"
+                href="#services"
+              >
                 Therapy services
               </a>
-              <a className="text-sm text-[#354943] underline-offset-4 hover:text-[var(--accent)] hover:underline" href="#approach">
+
+              <a
+                className="text-sm text-[#354943] underline-offset-4 transition-colors hover:text-[var(--accent)] hover:underline active:text-[var(--accent)] active:underline"
+                href="#approach"
+              >
                 Therapeutic approach
               </a>
-              <a className="text-sm text-[#354943] underline-offset-4 hover:text-[var(--accent)] hover:underline" href="#office">
+
+              <a
+                className="text-sm text-[#354943] underline-offset-4 transition-colors hover:text-[var(--accent)] hover:underline active:text-[var(--accent)] active:underline"
+                href="#office"
+              >
                 Our office
               </a>
-              <a className="text-sm text-[#354943] underline-offset-4 hover:text-[var(--accent)] hover:underline" href="#faq">
+
+              <a
+                className="text-sm text-[#354943] underline-offset-4 transition-colors hover:text-[var(--accent)] hover:underline active:text-[var(--accent)] active:underline"
+                href="#faq"
+              >
                 Frequently asked questions
               </a>
             </nav>
@@ -142,7 +164,10 @@ export default function Contact() {
 
         <div className="border-t border-[var(--border)]">
           <div className="container flex flex-col gap-2 py-5 text-xs leading-6 text-[#354943] sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} Dr. Maya Reynolds. All rights reserved.</p>
+            <p>
+              © {new Date().getFullYear()} Dr. Maya Reynolds. All rights
+              reserved.
+            </p>
             <p>
               Therapy in Santa Monica and throughout California via telehealth.
             </p>

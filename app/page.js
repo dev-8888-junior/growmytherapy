@@ -1,12 +1,12 @@
 
-import Image from "next/image";
+import TouchImage from "./components/TouchImage";
 import Introduction from "./components/Introduction";
 import Services from "./components/Services";
 import Approach from "./components/Approach";
 import Office from "./components/Office";
 import FAQ from "./components/FAQ";
-import Contact from "./components/Contact";  
-import QuoteBand from "./components/QuoteBand";   
+import Contact from "./components/Contact";
+import QuoteBand from "./components/QuoteBand";
 import WhoIWorkWith from "./components/WhoIWorkWith";
 
 const navigation = [
@@ -40,47 +40,44 @@ function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/95 backdrop-blur-md">
       <div className="container flex min-h-[82px] items-center justify-between gap-5">
-       
-<a
-  href="#top"
-  className="group flex shrink-0 items-center gap-3 rounded-lg focus-visible:outline-offset-4"
-  aria-label="Dr. Maya Reynolds home"
->
-  <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--accent)] font-serif text-xl text-[var(--primary)] transition-[transform,background-color,color] duration-300 ease-out group-hover:scale-105 group-hover:rotate-3 group-hover:bg-[var(--accent)] group-hover:text-[var(--surface)] motion-reduce:transition-none motion-reduce:group-hover:transform-none">
-    M
-  </span>
+        <a
+          href="#top"
+          className="group flex shrink-0 items-center gap-3 rounded-lg focus-visible:outline-offset-4"
+          aria-label="Dr. Maya Reynolds home"
+        >
+          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--accent)] font-serif text-xl text-[var(--primary)] transition-[transform,background-color,color] duration-300 ease-out group-hover:scale-105 group-hover:rotate-3 group-hover:bg-[var(--accent)] group-hover:text-[var(--surface)] group-active:scale-[0.97] group-active:rotate-0 group-active:bg-[var(--accent)] group-active:text-[var(--surface)] motion-reduce:transition-none motion-reduce:group-hover:transform-none motion-reduce:group-active:transform-none">
+            M
+          </span>
 
-  <span className="flex flex-col">
-    <span className="font-serif text-[19px] leading-tight tracking-[-0.04em] text-[var(--primary)] transition-colors duration-300 group-hover:text-[var(--accent)]">
-      Dr. Maya Reynolds
-    </span>
+          <span className="flex flex-col">
+            <span className="font-serif text-[19px] leading-tight tracking-[-0.04em] text-[var(--primary)] transition-colors duration-300 group-hover:text-[var(--accent)] group-active:text-[var(--accent)]">
+              Dr. Maya Reynolds
+            </span>
 
-    <span className="mt-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-[var(--muted)] transition-colors duration-300 group-hover:text-[var(--primary)]">
-      Psychology & Therapy
-    </span>
-  </span>
-</a>
-
+            <span className="mt-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-[var(--muted)] transition-colors duration-300 group-hover:text-[var(--primary)] group-active:text-[var(--primary)]">
+              Psychology & Therapy
+            </span>
+          </span>
+        </a>
 
         <nav
           aria-label="Main navigation"
           className="hidden items-center gap-5 lg:flex xl:gap-7"
         >
-          
-{navigation.map((item) => (
-  <a
-    key={item.label}
-    href={item.href}
-    className="group relative py-2 text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--foreground)] transition-[color,transform] duration-200 ease-out hover:-translate-y-0.5 hover:text-[var(--accent)] focus-visible:text-[var(--accent)] xl:text-[11px]"
-  >
-    {item.label}
-    <span
-      aria-hidden="true"
-      className="absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-[var(--accent)] transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none"
-    />
-  </a>
-))}
+          {navigation.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="group relative py-2 text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--foreground)] transition-[color,transform] duration-200 ease-out hover:-translate-y-0.5 hover:text-[var(--accent)] active:translate-y-0 active:scale-[0.98] active:text-[var(--accent)] focus-visible:text-[var(--accent)] xl:text-[11px]"
+            >
+              {item.label}
 
+              <span
+                aria-hidden="true"
+                className="absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-[var(--accent)] transition-transform duration-300 ease-out group-hover:scale-x-100 group-active:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none"
+              />
+            </a>
+          ))}
 
           <a href="#contact" className="button !min-h-11 !px-5">
             Get in touch <ArrowIcon />
@@ -88,8 +85,9 @@ function SiteHeader() {
         </nav>
 
         <details className="relative lg:hidden">
-          <summary className="flex min-h-11 cursor-pointer list-none items-center gap-3 rounded-full border border-[var(--border)] px-4 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--primary)] [&::-webkit-details-marker]:hidden">
+          <summary className="flex min-h-11 cursor-pointer list-none items-center gap-3 rounded-full border border-[var(--border)] px-4 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--primary)] transition-[background-color,color,transform] duration-200 active:scale-[0.97] active:bg-[var(--primary)] active:text-[var(--surface)] [&::-webkit-details-marker]:hidden">
             Menu
+
             <svg
               aria-hidden="true"
               viewBox="0 0 20 20"
@@ -113,9 +111,14 @@ function SiteHeader() {
               <a
                 key={item.label}
                 href={item.href}
-                className="rounded-lg px-4 py-3 text-sm text-[var(--foreground)] transition-colors hover:bg-[var(--secondary)]"
+                className="mobile-nav-link group relative flex items-center rounded-lg px-4 py-3 text-sm text-[var(--foreground)] transition-[background-color,color,transform] duration-200 ease-out hover:bg-[var(--secondary)] hover:text-[var(--accent)] focus-visible:bg-[var(--secondary)] focus-visible:text-[var(--accent)]"
               >
                 {item.label}
+
+                <span
+                  aria-hidden="true"
+                  className="absolute bottom-1 left-4 right-4 h-px origin-left scale-x-0 bg-[var(--accent)] transition-transform duration-300 ease-out group-hover:scale-x-100 group-active:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none"
+                />
               </a>
             ))}
 
@@ -143,9 +146,7 @@ function Hero() {
               You don&apos;t have to hold everything together alone.
             </h1>
 
-            
-<p className="mt-7 max-w-[550px] text-base leading-8 text-[#354943] sm:text-[17px]">
-
+            <p className="mt-7 max-w-[550px] text-base leading-8 text-[#354943] sm:text-[17px]">
               When you&apos;re the person others count on, it can be difficult
               to admit how much you&apos;re carrying. I offer collaborative
               therapy for adults navigating anxiety, trauma, burnout, and
@@ -153,12 +154,10 @@ function Hero() {
               need.
             </p>
 
-           
-<p className="mt-4 max-w-[530px] text-base leading-8 text-[#354943]">
-  In-person sessions in Santa Monica and secure telehealth for clients
-  located throughout California.
-</p>
-
+            <p className="mt-4 max-w-[530px] text-base leading-8 text-[#354943]">
+              In-person sessions in Santa Monica and secure telehealth for
+              clients located throughout California.
+            </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a href="#services" className="button">
@@ -194,18 +193,13 @@ function Hero() {
               className="absolute -left-1 top-10 z-0 hidden h-20 w-20 rounded-full border border-[var(--accent)] sm:block"
             />
 
-            
-<div className="group relative z-10 ml-2 mr-4 aspect-[4/5] overflow-hidden rounded-[24px] border-[8px] border-[var(--surface)] shadow-[0_24px_70px_rgba(38,59,54,0.13)] sm:mr-7">
-
-              <Image
+            <div className="group relative z-10 ml-2 mr-4 aspect-[4/5] overflow-hidden rounded-[24px] border-[8px] border-[var(--surface)] shadow-[0_24px_70px_rgba(38,59,54,0.13)] sm:mr-7">
+              <TouchImage
                 src="/images/dr-maya-reynolds.png"
                 alt="Portrait of Dr. Maya Reynolds"
-                fill
                 priority
                 sizes="(max-width: 767px) 90vw, (max-width: 1023px) 70vw, 42vw"
-               
-className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.025] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-
+                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.025] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
               />
             </div>
 
@@ -219,11 +213,9 @@ className="object-cover object-center transition-transform duration-700 ease-out
               </p>
             </div>
 
-           
-<p className="mt-4 pr-2 text-right font-serif text-base italic text-[var(--muted)] sm:pr-7">
-  Thoughtful, collaborative care
-</p>
-
+            <p className="mt-4 pr-2 text-right font-serif text-base italic text-[var(--muted)] sm:pr-7">
+              Thoughtful, collaborative care
+            </p>
           </div>
         </div>
 
@@ -248,8 +240,8 @@ export default function Home() {
     <main id="top">
       <SiteHeader />
       <Hero />
-      <Introduction />  
-      <WhoIWorkWith />  
+      <Introduction />
+      <WhoIWorkWith />
       <QuoteBand />
       <Services />
       <Approach />

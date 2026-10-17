@@ -1,5 +1,4 @@
-
-import Image from "next/image";
+import TouchImage from "./TouchImage";
 
 export default function Office() {
   return (
@@ -21,24 +20,21 @@ export default function Office() {
               uncluttered feel.
             </p>
 
-            
-<p className="section-copy mt-4">
-  Whether we meet in person or through secure telehealth, our work
-  can begin with space to reflect, talk openly, and explore what
-  support could look like for you.
-</p>
-
+            <p className="section-copy mt-4">
+              Whether we meet in person or through secure telehealth, our work
+              can begin with space to reflect, talk openly, and explore what
+              support could look like for you.
+            </p>
           </div>
         </div>
 
         <div className="mt-12 grid gap-5 lg:mt-16 lg:grid-cols-[1.12fr_0.88fr]">
           <figure className="group relative min-h-[420px] overflow-hidden rounded-[24px] border-[7px] border-[var(--background)] bg-[var(--secondary)] shadow-[0_20px_60px_rgba(38,59,54,0.10)] sm:min-h-[500px] lg:min-h-[620px]">
-            <Image
+            <TouchImage
               src="/images/office1.jpeg"
               alt="Interior of Dr. Maya Reynolds's Santa Monica therapy office"
-              fill
               sizes="(max-width: 1023px) 100vw, 56vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
             />
 
             <figcaption className="absolute bottom-4 left-4 max-w-[calc(100%-32px)] rounded-xl border border-white/70 bg-[var(--surface)]/95 px-5 py-4 shadow-lg backdrop-blur-sm sm:bottom-6 sm:left-6 sm:px-6">
@@ -53,12 +49,11 @@ export default function Office() {
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
             <figure className="group relative min-h-[270px] overflow-hidden rounded-[24px] bg-[var(--secondary)] sm:min-h-[330px] lg:min-h-[300px]">
-              <Image
+              <TouchImage
                 src="/images/office2.jpeg"
                 alt="A view of the office environment at Dr. Maya Reynolds's practice"
-                fill
                 sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 40vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
               />
 
               <figcaption className="absolute bottom-4 left-4 rounded-lg bg-[var(--surface)]/95 px-4 py-3 text-xs font-semibold tracking-wide text-[var(--primary)] shadow-sm backdrop-blur-sm">
@@ -106,7 +101,7 @@ export default function Office() {
 
                 <a
                   href="#contact"
-                  className="button button-secondary mt-7 !border-[var(--surface)] !bg-[var(--surface)] !text-[var(--primary)] hover:!border-[var(--accent-light)] hover:!bg-[var(--accent-light)]"
+                  className="button button-secondary mt-7 !border-[var(--surface)] !bg-[var(--surface)] !text-[var(--primary)] hover:!border-[var(--accent-light)] hover:!bg-[var(--accent-light)] active:!scale-[0.98] active:!border-[var(--primary)] active:!bg-[var(--primary)] active:!text-[var(--surface)]"
                 >
                   Explore your next step
                   <span aria-hidden="true">→</span>
