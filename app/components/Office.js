@@ -21,11 +21,13 @@ export default function Office() {
               uncluttered feel.
             </p>
 
-            <p className="mt-4 text-sm leading-7 text-[var(--muted)]">
-              Whether we meet in person or through secure telehealth, our work
-              can begin with space to reflect, talk openly, and explore what
-              support could look like for you.
-            </p>
+            
+<p className="section-copy mt-4">
+  Whether we meet in person or through secure telehealth, our work
+  can begin with space to reflect, talk openly, and explore what
+  support could look like for you.
+</p>
+
           </div>
         </div>
 

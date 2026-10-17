@@ -40,38 +40,47 @@ function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/95 backdrop-blur-md">
       <div className="container flex min-h-[82px] items-center justify-between gap-5">
-        <a
-          href="#top"
-          className="flex shrink-0 items-center gap-3"
-          aria-label="Dr. Maya Reynolds home"
-        >
-          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--accent)] font-serif text-xl text-[var(--primary)]">
-            M
-          </span>
+       
+<a
+  href="#top"
+  className="group flex shrink-0 items-center gap-3 rounded-lg focus-visible:outline-offset-4"
+  aria-label="Dr. Maya Reynolds home"
+>
+  <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--accent)] font-serif text-xl text-[var(--primary)] transition-[transform,background-color,color] duration-300 ease-out group-hover:scale-105 group-hover:rotate-3 group-hover:bg-[var(--accent)] group-hover:text-[var(--surface)] motion-reduce:transition-none motion-reduce:group-hover:transform-none">
+    M
+  </span>
 
-          <span className="flex flex-col">
-            <span className="font-serif text-[19px] leading-tight tracking-[-0.04em] text-[var(--primary)]">
-              Dr. Maya Reynolds
-            </span>
-            <span className="mt-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">
-              Psychology & Therapy
-            </span>
-          </span>
-        </a>
+  <span className="flex flex-col">
+    <span className="font-serif text-[19px] leading-tight tracking-[-0.04em] text-[var(--primary)] transition-colors duration-300 group-hover:text-[var(--accent)]">
+      Dr. Maya Reynolds
+    </span>
+
+    <span className="mt-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-[var(--muted)] transition-colors duration-300 group-hover:text-[var(--primary)]">
+      Psychology & Therapy
+    </span>
+  </span>
+</a>
+
 
         <nav
           aria-label="Main navigation"
           className="hidden items-center gap-5 lg:flex xl:gap-7"
         >
-          {navigation.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--foreground)] transition-colors hover:text-[var(--accent)] xl:text-[11px]"
-            >
-              {item.label}
-            </a>
-          ))}
+          
+{navigation.map((item) => (
+  <a
+    key={item.label}
+    href={item.href}
+    className="group relative py-2 text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--foreground)] transition-[color,transform] duration-200 ease-out hover:-translate-y-0.5 hover:text-[var(--accent)] focus-visible:text-[var(--accent)] xl:text-[11px]"
+  >
+    {item.label}
+    <span
+      aria-hidden="true"
+      className="absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-[var(--accent)] transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none"
+    />
+  </a>
+))}
+
 
           <a href="#contact" className="button !min-h-11 !px-5">
             Get in touch <ArrowIcon />
@@ -185,14 +194,18 @@ function Hero() {
               className="absolute -left-1 top-10 z-0 hidden h-20 w-20 rounded-full border border-[var(--accent)] sm:block"
             />
 
-            <div className="relative z-10 ml-2 mr-4 aspect-[4/5] overflow-hidden rounded-[24px] border-[8px] border-[var(--surface)] shadow-[0_24px_70px_rgba(38,59,54,0.13)] sm:mr-7">
+            
+<div className="group relative z-10 ml-2 mr-4 aspect-[4/5] overflow-hidden rounded-[24px] border-[8px] border-[var(--surface)] shadow-[0_24px_70px_rgba(38,59,54,0.13)] sm:mr-7">
+
               <Image
                 src="/images/dr-maya-reynolds.png"
                 alt="Portrait of Dr. Maya Reynolds"
                 fill
                 priority
                 sizes="(max-width: 767px) 90vw, (max-width: 1023px) 70vw, 42vw"
-                className="object-cover object-center"
+               
+className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.025] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+
               />
             </div>
 
